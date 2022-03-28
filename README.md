@@ -32,9 +32,9 @@ Usage: pointable [FLAGS]
 
 Flags:
   -name string
-    	the name of package. default: automatically specified via -path
+    	the name of package (default: automatically specified via -path)
   -path string
-    	the path to package. default: 'pkg' (default "pkg")
+    	the path to package (default "pkg")
   -version
     	show the version
 ```
