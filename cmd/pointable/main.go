@@ -15,16 +15,22 @@ func init() {
 	flag.Usage = func() {
 		w := flag.CommandLine.Output()
 		fmt.Fprintf(w, "Usage of %s:\n", os.Args[0])
-		fmt.Fprintln(w, "pointable [options] [cluster] [task-id]")
+		fmt.Fprintln(w, "pointable [options]")
 		fmt.Fprintln(w, "")
 		flag.PrintDefaults()
 	}
 }
 
 func main() {
+	showVersion := flag.Bool("version", false, "show the version")
 	pkgPath := flag.String("path", "pkg", "the path to package. default: 'pkg'")
 	pkgName := flag.String("name", "", "the name of package. default: automatically specified via -path")
 	flag.Parse()
+
+	if *showVersion {
+		fmt.Println("pointable ", Version)
+		return
+	}
 
 	dist := pointable.NewDist(*pkgPath)
 	if *pkgName != "" {
