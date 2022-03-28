@@ -14,7 +14,7 @@ func String(v string) *string {
 }
 ```
 
-and calling `pkg.String("foo")` will be satisfying.
+and calling `ptr.String("foo")` will be satisfying.
 
 However, writing them everytime when you need is really tedious thing.
 Although it is a good idea to create a convenient package, fewer dependencies are preferred generally.
@@ -22,7 +22,7 @@ So the best way is to generate the code via a command line tool: `pointable`.
 
 ## Usage
 
-If you execute the `pointable` command without any flags, it will create a `./pkg` directory and Go files inside it.
+If you execute the `pointable` command without any flags, it will create a `./ptr` directory and Go files inside it.
 You can specify the path and the name of package, but creating code inside the directory that has already existed is not supported.
 This is because Pointable is oriented to keep its simplicity, and you easily do a workaround by creating temporally directory and merging them manually.
 
@@ -34,7 +34,7 @@ Flags:
   -name string
     	the name of package (default: automatically specified via -path)
   -path string
-    	the path to package (default "pkg")
+    	the path to package (default "ptr")
   -version
     	show the version
 ```
