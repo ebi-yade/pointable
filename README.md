@@ -47,8 +47,9 @@ Flags:
 go install github.com/ebi-yade/pointable/cmd/pointable@latest
 ```
 
-## Homebrew
+### via Homebrew
 
 ```shell
-brew install ebi-yade/pointable/pointable
+brew tap "ebi-yade/pointable" "https://github.com/ebi-yade/pointable"
+brew install pointable
 ```
