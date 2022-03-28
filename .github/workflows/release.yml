@@ -1,0 +1,31 @@
+name: release
+
+on:
+  push:
+    branches:
+      - "!**/*"
+    tags:
+      - "v*"
+
+jobs:
+  goreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - id: go-version
+        name: Determine the version of Go
+        run: |
+          go_version=$(perl -ne 'print $1 if /^go (([0-9]+\.){1,2}[0-9]+)/' < go.mod)
+          echo "::set-output name=this::$go_version"
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ steps.go-version.outputs.this }}
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v1
+        with:
+          version: latest
+          args: release --rm-dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
