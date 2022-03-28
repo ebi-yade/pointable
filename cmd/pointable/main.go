@@ -43,7 +43,7 @@ func main() {
 	}
 
 	templates := []*pointable.Template{
-		pointable.NewDefaultTemplate(dist, "builtin", pointable.CommonTemplate, pointable.BuiltinData()),
+		pointable.NewDefaultTemplate(dist, "builtin", pointable.CommonTemplate, pointable.BuiltinTypes()),
 	}
 	for _, tmpl := range templates {
 		if err := tmpl.Do(); err != nil {

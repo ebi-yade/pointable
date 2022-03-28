@@ -19,9 +19,9 @@ func (b Builtin) FuncName() string {
 	return strings.Title(b.Type)
 }
 
-// BuiltinData provides information of built-in types in Go.
+// BuiltinTypes provides information of built-in types in Go.
 // For more, see: https://go.dev/ref/spec#Types
-func BuiltinData() []Type {
+func BuiltinTypes() []Type {
 	res := make([]Type, 0, len(builtinTypes))
 
 	for _, t := range builtinTypes {
