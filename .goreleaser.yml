@@ -16,6 +16,24 @@ checksum:
   name_template: "checksums.txt"
 snapshot:
   name_template: "{{ .Tag }}-next"
+
+brews:
+  - name: pointable
+    tap:
+      owner: ebi-yade
+      name: pointable
+    folder: HomebrewFormula
+    commit_author:
+      name: 'github-actions[bot]'
+      email: 'github-actions[bot]@users.noreply.github.com'
+    homepage: https://github.com/ebi-yade/pointable#readme
+    description: The code-generator used to get the pointer to scalar literals in Go
+    license: MIT
+    install: |
+      bin.install "pointable"
+    test: |
+      system "#{bin}/pointable -version"
+
 changelog:
   sort: asc
   filters:

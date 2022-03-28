@@ -38,3 +38,17 @@ Flags:
   -version
     	show the version
 ```
+
+## Install
+
+### via Go (1.16 or higher)
+
+```shell
+go install github.com/ebi-yade/pointable/cmd/pointable@latest
+```
+
+## Homebrew
+
+```shell
+brew install ebi-yade/pointable/pointable
+```
