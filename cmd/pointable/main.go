@@ -14,9 +14,9 @@ var Version = "current"
 func init() {
 	flag.Usage = func() {
 		w := flag.CommandLine.Output()
-		fmt.Fprintf(w, "Usage of %s:\n", os.Args[0])
-		fmt.Fprintln(w, "pointable [options]")
+		fmt.Fprintln(w, "Usage: pointable [FLAGS]")
 		fmt.Fprintln(w, "")
+		fmt.Fprintln(w, "Flags:")
 		flag.PrintDefaults()
 	}
 }
