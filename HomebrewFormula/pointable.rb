@@ -5,21 +5,21 @@
 class Pointable < Formula
   desc "The code-generator used to get the pointer to scalar literals in Go"
   homepage "https://github.com/ebi-yade/pointable#readme"
-  version "1.0.2"
+  version "1.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ebi-yade/pointable/releases/download/v1.0.2/pointable_1.0.2_darwin_amd64.tar.gz"
-      sha256 "10097c841ca673e2581fe974291411fcbc5635f04424a146a17a4340675f60e7"
+      url "https://github.com/ebi-yade/pointable/releases/download/v1.0.3/pointable_1.0.3_darwin_amd64.tar.gz"
+      sha256 "9f093eca69fed99a36de70d039db274a37d853c8aba2a2b548f51f24a12dc32d"
 
       def install
         bin.install "pointable"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ebi-yade/pointable/releases/download/v1.0.2/pointable_1.0.2_darwin_arm64.tar.gz"
-      sha256 "14fdb3850946d66fd4f37a8fab8e562bb19013d0426ab5eb67dd204e0c17be43"
+      url "https://github.com/ebi-yade/pointable/releases/download/v1.0.3/pointable_1.0.3_darwin_arm64.tar.gz"
+      sha256 "1fa633710d0552f0b9ea7724bdbb16a712e66cb68cff42cb2c9a3ab22ae1523c"
 
       def install
         bin.install "pointable"
@@ -28,17 +28,17 @@ class Pointable < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ebi-yade/pointable/releases/download/v1.0.2/pointable_1.0.2_linux_amd64.tar.gz"
-      sha256 "a207aa441b4f47b304bb36b7d77c02216399bccf02675c9ac34b9917b8c2058a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ebi-yade/pointable/releases/download/v1.0.3/pointable_1.0.3_linux_arm64.tar.gz"
+      sha256 "39cdaacd71f653028d0358e914ebf71677c1284317c0aeaff700c08d6fcb803f"
 
       def install
         bin.install "pointable"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ebi-yade/pointable/releases/download/v1.0.2/pointable_1.0.2_linux_arm64.tar.gz"
-      sha256 "a7c247a64d165d3f8c5faaeba63f9f86cc2c5c76150a7d8233794c8a65ea08eb"
+    if Hardware::CPU.intel?
+      url "https://github.com/ebi-yade/pointable/releases/download/v1.0.3/pointable_1.0.3_linux_amd64.tar.gz"
+      sha256 "6156e2dcf003dd954320c142cffb50716c1528c0d50e58f808d62194d0d1c571"
 
       def install
         bin.install "pointable"
