@@ -23,8 +23,8 @@ func init() {
 
 func main() {
 	showVersion := flag.Bool("version", false, "show the version")
-	pkgPath := flag.String("path", "pkg", "the path to package. default: 'pkg'")
-	pkgName := flag.String("name", "", "the name of package. default: automatically specified via -path")
+	pkgPath := flag.String("path", "pkg", "the path to package")
+	pkgName := flag.String("name", "", "the name of package (default: automatically specified via -path)")
 	flag.Parse()
 
 	if *showVersion {
