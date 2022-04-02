@@ -62,7 +62,11 @@ type TemplateVars struct {
 // CommonTemplate is the common template.
 // It is recommended to use this template, but you can insert the template if you need.
 var CommonTemplate = template.Must(template.New("CommonTemplate").Parse(`package {{ $.Pkg }}
-{{ range $_, $t := $.Types }}
+
+// MIT License
+// Copyright (c) 2022 市川恭佑 (ebi)
+// Although the generator command ebi-yade/pointable specifies the MIT License,
+// you are allowed to delete this license note if you want.{{ range $_, $t := $.Types }}
 {{ template "func" $t }}
 {{- end }}
 {{- define "func" }}
